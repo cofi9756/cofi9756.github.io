@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Interests</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a18;
+      --muted: #6b6b65;
+      --subtle: #e8e6e0;
+      --accent: #c0392b;
+      --bg: #faf9f6;
+      --white: #ffffff;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+    body { font-family: var(--sans); background: var(--bg); color: var(--ink); font-size: 16px; line-height: 1.75; }
+
+    nav { background: var(--white); border-bottom: 1px solid var(--subtle); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-logo { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--muted); text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+    .nav-links a.active { border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
+
+    .page-header { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem 2.5rem; }
+    .page-tag { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+    .page-header h1 { font-family: var(--serif); font-size: 2.5rem; font-weight: 600; letter-spacing: -0.02em; }
+    .page-header p { margin-top: 0.75rem; color: var(--muted); font-size: 0.95rem; max-width: 520px; }
+    .divider { width: 48px; height: 2px; background: var(--accent); margin: 1.5rem 0; }
+
+    .highlights { max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem; display: flex; flex-direction: column; gap: 4rem; }
+
+    .highlight { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .highlight.reverse { direction: rtl; }
+    .highlight.reverse > * { direction: ltr; }
+
+    .highlight-img { position: relative; }
+    .img-placeholder { width: 100%; height: 340px; background: var(--subtle); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; border-radius: 4px; }
+    .img-placeholder .icon { font-size: 2.5rem; opacity: 0.3; }
+    .img-placeholder span { font-size: 0.75rem; font-weight: 500; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+    .highlight-img img { width: 100%; height: 340px; object-fit: cover; border-radius: 4px; display: block; }
+
+    .highlight-num { font-family: var(--serif); font-size: 5rem; font-weight: 600; color: var(--subtle); line-height: 1; margin-bottom: -0.5rem; }
+    .highlight-content h2 { font-family: var(--serif); font-size: 1.65rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.25rem; }
+    .highlight-tag { display: inline-block; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+    .highlight-content p { color: var(--muted); font-size: 0.95rem; }
+
+    .hr-line { border: none; border-top: 1px solid var(--subtle); }
+
+    footer { border-top: 1px solid var(--subtle); text-align: center; padding: 2rem; font-size: 0.8rem; color: var(--muted); }
+
+    @media (max-width: 768px) {
+      .highlight, .highlight.reverse { grid-template-columns: 1fr; direction: ltr; gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Your Name</a>
+    <ul class="nav-links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="interests.html" class="active">Interests</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="social.html">Social</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header">
+  <p class="page-tag">Beyond the Classroom</p>
+  <h1>Interests &amp; Activities</h1>
+  <div class="divider"></div>
+  <p>The pursuits, hobbies, and communities that shape who I am outside of academics. Each one has contributed to my growth in ways that complement my professional path.</p>
+</header>
+
+<div class="highlights">
+
+  <!-- HIGHLIGHT 1 -->
+  <article class="highlight">
+    <div class="highlight-img">
+      <div class="img-placeholder">
+        <span class="icon">&#127947;</span>
+        <span>Interest Photo 1</span>
+      </div>
+    </div>
+    <div class="highlight-content">
+      <div class="highlight-num">01</div>
+      <h2>Interest or Activity Name</h2>
+      <span class="highlight-tag">Category · Est. Year</span>
+      <p>
+        Replace this with a description of at least 50 words. Describe what this interest or extracurricular activity is, how you got involved, and what it means to you. Explain the skills it has helped you develop — whether leadership, teamwork, creativity, or discipline — and how it connects to your broader personal and professional goals. Be specific and let your enthusiasm show.
+      </p>
+    </div>
+  </article>
+
+  <hr class="hr-line" />
+
+  <!-- HIGHLIGHT 2 -->
+  <article class="highlight reverse">
+    <div class="highlight-img">
+      <div class="img-placeholder">
+        <span class="icon">&#127918;</span>
+        <span>Interest Photo 2</span>
+      </div>
+    </div>
+    <div class="highlight-content">
+      <div class="highlight-num">02</div>
+      <h2>Interest or Activity Name</h2>
+      <span class="highlight-tag">Category · Est. Year</span>
+      <p>
+        Replace this with a description of at least 50 words. Describe what this interest or extracurricular activity is, how you got involved, and what it means to you. Explain the skills it has helped you develop — whether leadership, teamwork, creativity, or discipline — and how it connects to your broader personal and professional goals. Be specific and let your enthusiasm show.
+      </p>
+    </div>
+  </article>
+
+  <hr class="hr-line" />
+
+  <!-- HIGHLIGHT 3 -->
+  <article class="highlight">
+    <div class="highlight-img">
+      <div class="img-placeholder">
+        <span class="icon">&#127925;</span>
+        <span>Interest Photo 3</span>
+      </div>
+    </div>
+    <div class="highlight-content">
+      <div class="highlight-num">03</div>
+      <h2>Interest or Activity Name</h2>
+      <span class="highlight-tag">Category · Est. Year</span>
+      <p>
+        Replace this with a description of at least 50 words. Describe what this interest or extracurricular activity is, how you got involved, and what it means to you. Explain the skills it has helped you develop — whether leadership, teamwork, creativity, or discipline — and how it connects to your broader personal and professional goals. Be specific and let your enthusiasm show.
+      </p>
+    </div>
+  </article>
+
+</div>
+
+<footer>
+  &copy; 2025 Your Name &mdash; Built for [Course Name]
+</footer>
+
+</body>
+</html>

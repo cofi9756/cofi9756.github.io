@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — About Me</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a18;
+      --muted: #6b6b65;
+      --subtle: #e8e6e0;
+      --accent: #c0392b;
+      --bg: #faf9f6;
+      --white: #ffffff;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+    body { font-family: var(--sans); background: var(--bg); color: var(--ink); font-size: 16px; line-height: 1.75; }
+
+    /* NAV */
+    nav { background: var(--white); border-bottom: 1px solid var(--subtle); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-logo { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--muted); text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+    .nav-links a.active { border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
+
+    /* HERO */
+    .hero { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem 3rem; display: grid; grid-template-columns: 1fr 340px; gap: 5rem; align-items: start; }
+    .hero-tag { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.25rem; }
+    .hero h1 { font-family: var(--serif); font-size: clamp(2.5rem, 5vw, 3.75rem); font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 1.5rem; }
+    .hero-intro { font-size: 1.05rem; color: var(--muted); max-width: 540px; }
+    .divider { width: 48px; height: 2px; background: var(--accent); margin: 2rem 0; }
+
+    .hero-images { display: flex; flex-direction: column; gap: 1.25rem; }
+    .img-card { position: relative; overflow: hidden; border-radius: 4px; }
+    .img-card img { width: 100%; display: block; object-fit: cover; }
+    .img-card.portrait { height: 420px; }
+    .img-card.landscape { height: 200px; }
+    .img-placeholder { width: 100%; background: var(--subtle); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; }
+    .img-placeholder.portrait { height: 420px; }
+    .img-placeholder.landscape { height: 200px; }
+    .img-placeholder span { font-size: 0.75rem; font-weight: 500; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+    .img-placeholder .icon { font-size: 2rem; opacity: 0.35; }
+    .img-label { margin-top: 0.5rem; font-size: 0.75rem; color: var(--muted); letter-spacing: 0.04em; }
+
+    /* ABOUT BODY */
+    .about-body { max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem; display: grid; grid-template-columns: 1fr 340px; gap: 5rem; }
+    .about-text h2 { font-family: var(--serif); font-size: 1.75rem; font-weight: 600; margin-bottom: 1.25rem; letter-spacing: -0.01em; }
+    .about-text p { color: var(--muted); margin-bottom: 1.25rem; font-size: 0.975rem; }
+    .about-text p:last-child { margin-bottom: 0; }
+
+    .sidebar { padding-top: 0.25rem; }
+    .sidebar-card { background: var(--white); border: 1px solid var(--subtle); border-radius: 4px; padding: 1.5rem; margin-bottom: 1.25rem; }
+    .sidebar-card h3 { font-family: var(--serif); font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; }
+    .sidebar-card ul { list-style: none; }
+    .sidebar-card li { font-size: 0.875rem; color: var(--muted); padding: 0.3rem 0; border-bottom: 1px solid var(--subtle); }
+    .sidebar-card li:last-child { border-bottom: none; }
+    .sidebar-card li strong { color: var(--ink); font-weight: 500; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--subtle); text-align: center; padding: 2rem; font-size: 0.8rem; color: var(--muted); }
+
+    @media (max-width: 768px) {
+      .hero, .about-body { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-images { flex-direction: row; }
+      .img-card.portrait { height: 260px; flex: 1; }
+      .img-card.landscape { height: 260px; flex: 1; }
+      .img-placeholder.portrait { height: 260px; }
+      .img-placeholder.landscape { height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Your Name</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">About</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="interests.html">Interests</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="social.html">Social</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <p class="hero-tag">Welcome to my portfolio</p>
+    <h1>Hello, I'm<br />[Your Name].</h1>
+    <p class="hero-intro">
+      A brief one- or two-sentence hook that captures who you are and what drives you — your field, your passion, and what makes you stand out.
+    </p>
+    <div class="divider"></div>
+    <p style="font-size:0.95rem; color: var(--muted); max-width: 500px;">
+      This portfolio is a curated window into my academic journey, professional ambitions, and the things that inspire me outside the classroom. Browse through my resume, projects, interests, and social presence to get a full picture of who I am and what I bring to the table.
+    </p>
+  </div>
+  <div class="hero-images">
+    <div class="img-card portrait">
+      <div class="img-placeholder portrait">
+        <span class="icon">&#128247;</span>
+        <span>Professional Photo</span>
+      </div>
+    </div>
+    <p class="img-label">Replace with your professional headshot</p>
+    <div class="img-card landscape">
+      <div class="img-placeholder landscape">
+        <span class="icon">&#127775;</span>
+        <span>Interest / Brand Image</span>
+      </div>
+    </div>
+    <p class="img-label">An image representing your passions or field</p>
+  </div>
+</section>
+
+<section class="about-body">
+  <div class="about-text">
+    <h2>A little more about me</h2>
+    <p>
+      Start here with your background — where you're from, what you're studying or working in, and what initially drew you to your field. Be genuine and specific. This paragraph should feel like a handshake, warm but purposeful. (Minimum 250 words total across this section.)
+    </p>
+    <p>
+      In this paragraph, dive into what makes you unique. Maybe it's an unusual combination of skills — technical and creative, analytical and empathetic. Talk about experiences that have shaped your perspective. Think about the intersection of your education, lived experience, and goals.
+    </p>
+    <p>
+      Use this space to describe the purpose of this portfolio. What will visitors find here? Walk them through the pages: your resume and credentials, your extracurricular interests with the context behind them, the academic and professional work you're most proud of, and the social platforms where you build your personal brand.
+    </p>
+    <p>
+      Close with a forward-looking statement — what are you working toward? What kind of opportunities, collaborators, or conversations are you hoping this portfolio invites? Keep it aspirational but grounded, and let your voice come through clearly.
+    </p>
+    <p>
+      Add additional paragraphs here to meet the 250-word minimum. Use this space to expand on anything that feels important to your story — a defining moment, a value you hold, a challenge you've overcome, or something you're currently learning. The more authentic, the more memorable.
+    </p>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <h3>Quick Facts</h3>
+      <ul>
+        <li><strong>Degree</strong> — Your Degree / Major</li>
+        <li><strong>Institution</strong> — Your University</li>
+        <li><strong>Expected Grad</strong> — Month Year</li>
+        <li><strong>Based In</strong> — City, State</li>
+        <li><strong>Career Focus</strong> — Your Field</li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>What's Inside</h3>
+      <ul>
+        <li>&#128196; Resume &amp; CV</li>
+        <li>&#127947; Interests &amp; Activities</li>
+        <li>&#128218; Academic Projects</li>
+        <li>&#128279; Social Media Profiles</li>
+      </ul>
+    </div>
+  </aside>
+</section>
+
+<footer>
+  &copy; 2025 Your Name &mdash; Built for [Course Name]
+</footer>
+
+</body>
+</html>

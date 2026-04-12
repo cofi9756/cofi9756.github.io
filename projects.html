@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a18;
+      --muted: #6b6b65;
+      --subtle: #e8e6e0;
+      --accent: #c0392b;
+      --bg: #faf9f6;
+      --white: #ffffff;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+    body { font-family: var(--sans); background: var(--bg); color: var(--ink); font-size: 16px; line-height: 1.75; }
+
+    nav { background: var(--white); border-bottom: 1px solid var(--subtle); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-logo { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--muted); text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+    .nav-links a.active { border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
+
+    .page-header { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem 2.5rem; }
+    .page-tag { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+    .page-header h1 { font-family: var(--serif); font-size: 2.5rem; font-weight: 600; letter-spacing: -0.02em; }
+    .page-header p { margin-top: 0.75rem; color: var(--muted); font-size: 0.95rem; max-width: 520px; }
+    .divider { width: 48px; height: 2px; background: var(--accent); margin: 1.5rem 0; }
+
+    .projects-grid { max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+
+    .project-card { background: var(--white); border: 1px solid var(--subtle); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow 0.2s; }
+    .project-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+
+    .card-img { position: relative; }
+    .img-placeholder { width: 100%; height: 220px; background: var(--subtle); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; }
+    .img-placeholder .icon { font-size: 2rem; opacity: 0.3; }
+    .img-placeholder span { font-size: 0.7rem; font-weight: 500; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+    .card-img img { width: 100%; height: 220px; object-fit: cover; display: block; }
+
+    .card-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+    .card-type { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+    .card-body h2 { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.75rem; line-height: 1.3; }
+    .card-body p { color: var(--muted); font-size: 0.9rem; flex: 1; }
+
+    .card-footer { padding: 1rem 1.5rem; border-top: 1px solid var(--subtle); display: flex; align-items: center; justify-content: space-between; }
+    .card-meta { font-size: 0.8rem; color: var(--muted); }
+    .card-link { font-size: 0.8rem; font-weight: 500; color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 0.25rem; }
+    .card-link:hover { color: var(--accent); }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+    .tag { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.04em; background: var(--bg); border: 1px solid var(--subtle); border-radius: 2px; padding: 0.2rem 0.5rem; color: var(--muted); }
+
+    footer { border-top: 1px solid var(--subtle); text-align: center; padding: 2rem; font-size: 0.8rem; color: var(--muted); }
+
+    @media (max-width: 900px) { .projects-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .projects-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Your Name</a>
+    <ul class="nav-links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="interests.html">Interests</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="social.html">Social</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header">
+  <p class="page-tag">Work &amp; Academics</p>
+  <h1>Projects &amp; Experience</h1>
+  <div class="divider"></div>
+  <p>A selection of academic projects, research, and professional experiences that represent the depth and direction of my work.</p>
+</header>
+
+<div class="projects-grid">
+
+  <!-- PROJECT 1 -->
+  <article class="project-card">
+    <div class="card-img">
+      <div class="img-placeholder">
+        <span class="icon">&#128187;</span>
+        <span>Project Image</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-type">Academic Project</p>
+      <h2>Project or Experience Title One</h2>
+      <p>Replace this with a description of at least 50 words. Explain the purpose of the project, your role, the methods or tools used, and what you learned or achieved. Describe the impact or outcome and how this work connects to your professional goals. Include any collaborators or context that helps the reader understand the scope.</p>
+      <div class="tags">
+        <span class="tag">Skill / Tool</span>
+        <span class="tag">Skill / Tool</span>
+        <span class="tag">Year</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span class="card-meta">Course / Organization Name</span>
+      <a href="#" class="card-link">View Project &#8599;</a>
+    </div>
+  </article>
+
+  <!-- PROJECT 2 -->
+  <article class="project-card">
+    <div class="card-img">
+      <div class="img-placeholder">
+        <span class="icon">&#128202;</span>
+        <span>Project Image</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-type">Professional Experience</p>
+      <h2>Project or Experience Title Two</h2>
+      <p>Replace this with a description of at least 50 words. Explain the purpose of the project, your role, the methods or tools used, and what you learned or achieved. Describe the impact or outcome and how this work connects to your professional goals. Include any collaborators or context that helps the reader understand the scope.</p>
+      <div class="tags">
+        <span class="tag">Skill / Tool</span>
+        <span class="tag">Skill / Tool</span>
+        <span class="tag">Year</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span class="card-meta">Course / Organization Name</span>
+      <a href="#" class="card-link">View Project &#8599;</a>
+    </div>
+  </article>
+
+  <!-- PROJECT 3 -->
+  <article class="project-card">
+    <div class="card-img">
+      <div class="img-placeholder">
+        <span class="icon">&#128221;</span>
+        <span>Project Image</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-type">Research / Publication</p>
+      <h2>Project or Experience Title Three</h2>
+      <p>Replace this with a description of at least 50 words. Explain the purpose of the project, your role, the methods or tools used, and what you learned or achieved. Describe the impact or outcome and how this work connects to your professional goals. Include any collaborators or context that helps the reader understand the scope.</p>
+      <div class="tags">
+        <span class="tag">Skill / Tool</span>
+        <span class="tag">Skill / Tool</span>
+        <span class="tag">Year</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span class="card-meta">Course / Organization Name</span>
+      <a href="#" class="card-link">View Project &#8599;</a>
+    </div>
+  </article>
+
+</div>
+
+<footer>
+  &copy; 2025 Your Name &mdash; Built for [Course Name]
+</footer>
+
+</body>
+</html>

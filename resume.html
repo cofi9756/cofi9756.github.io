@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Resume / CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a18;
+      --muted: #6b6b65;
+      --subtle: #e8e6e0;
+      --accent: #c0392b;
+      --bg: #faf9f6;
+      --white: #ffffff;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+    body { font-family: var(--sans); background: var(--bg); color: var(--ink); font-size: 16px; line-height: 1.75; }
+
+    nav { background: var(--white); border-bottom: 1px solid var(--subtle); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-logo { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--muted); text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+    .nav-links a.active { border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
+
+    .page-header { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem 2.5rem; }
+    .page-tag { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+    .page-header h1 { font-family: var(--serif); font-size: 2.5rem; font-weight: 600; letter-spacing: -0.02em; }
+    .page-header p { margin-top: 0.75rem; color: var(--muted); font-size: 0.95rem; max-width: 500px; }
+    .divider { width: 48px; height: 2px; background: var(--accent); margin: 1.5rem 0; }
+
+    .resume-container { max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem; }
+
+    .resume-actions { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.75rem; }
+    .btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.6rem 1.25rem; border-radius: 3px; font-family: var(--sans); font-size: 0.875rem; font-weight: 500; cursor: pointer; text-decoration: none; transition: all 0.18s; border: 1.5px solid var(--ink); background: var(--ink); color: var(--white); }
+    .btn:hover { background: #333; border-color: #333; }
+    .btn-outline { background: transparent; color: var(--ink); }
+    .btn-outline:hover { background: var(--subtle); }
+
+    .embed-wrapper { width: 100%; border: 1px solid var(--subtle); border-radius: 4px; overflow: hidden; background: var(--white); }
+    .embed-wrapper iframe { width: 100%; height: 780px; border: none; display: block; }
+
+    .embed-placeholder { width: 100%; height: 780px; background: var(--white); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; border: 2px dashed var(--subtle); border-radius: 4px; }
+    .embed-placeholder .big-icon { font-size: 3rem; opacity: 0.25; }
+    .embed-placeholder h3 { font-family: var(--serif); font-size: 1.25rem; color: var(--muted); }
+    .embed-placeholder p { font-size: 0.875rem; color: var(--muted); text-align: center; max-width: 380px; line-height: 1.6; }
+    .embed-placeholder code { background: var(--subtle); border-radius: 3px; padding: 0.15rem 0.4rem; font-size: 0.82rem; font-family: monospace; color: var(--ink); }
+
+    .privacy-note { margin-top: 1.25rem; background: #fdf6f0; border-left: 3px solid var(--accent); border-radius: 0 4px 4px 0; padding: 0.875rem 1.25rem; font-size: 0.875rem; color: var(--muted); }
+    .privacy-note strong { color: var(--ink); }
+
+    footer { border-top: 1px solid var(--subtle); text-align: center; padding: 2rem; font-size: 0.8rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Your Name</a>
+    <ul class="nav-links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="resume.html" class="active">Resume</a></li>
+      <li><a href="interests.html">Interests</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="social.html">Social</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header">
+  <p class="page-tag">Credentials</p>
+  <h1>Resume / CV</h1>
+  <div class="divider"></div>
+  <p>A complete overview of my education, experience, and skills. Download a copy or view it below. Personal contact details have been omitted.</p>
+</header>
+
+<div class="resume-container">
+  <div class="resume-actions">
+    <a href="resume.pdf" class="btn" download>&#11015; Download PDF</a>
+    <a href="#" class="btn btn-outline" target="_blank" rel="noopener">Open in Drive &#8599;</a>
+  </div>
+
+  <!-- OPTION A: Embed a PDF directly -->
+  <!-- Uncomment and set src to your file path:
+  <div class="embed-wrapper">
+    <iframe src="resume.pdf" title="Resume PDF"></iframe>
+  </div>
+  -->
+
+  <!-- OPTION B: Embed Google Drive preview -->
+  <!-- Uncomment and replace FILE_ID with your Google Drive file ID:
+  <div class="embed-wrapper">
+    <iframe
+      src="https://drive.google.com/file/d/FILE_ID/preview"
+      allow="autoplay"
+      title="Resume on Google Drive">
+    </iframe>
+  </div>
+  -->
+
+  <!-- PLACEHOLDER shown until you replace with real embed -->
+  <div class="embed-placeholder">
+    <span class="big-icon">&#128196;</span>
+    <h3>Your Resume Goes Here</h3>
+    <p>
+      Replace this block with either a PDF embed or a Google Drive iframe.<br />
+      Use <code>&lt;iframe src="resume.pdf"&gt;</code> for a local PDF, or paste your Google Drive preview link. Make sure the file is shared publicly — test it in an incognito window.
+    </p>
+  </div>
+
+  <div class="privacy-note">
+    <strong>Privacy reminder:</strong> Ensure your resume does not include your home address, personal phone number, or other private contact details before publishing publicly.
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 Your Name &mdash; Built for [Course Name]
+</footer>
+
+</body>
+</html>

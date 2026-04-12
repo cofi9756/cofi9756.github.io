@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Social Media</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1a18;
+      --muted: #6b6b65;
+      --subtle: #e8e6e0;
+      --accent: #c0392b;
+      --bg: #faf9f6;
+      --white: #ffffff;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+    body { font-family: var(--sans); background: var(--bg); color: var(--ink); font-size: 16px; line-height: 1.75; }
+
+    nav { background: var(--white); border-bottom: 1px solid var(--subtle); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-logo { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--muted); text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+    .nav-links a.active { border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
+
+    .page-header { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem 2.5rem; }
+    .page-tag { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+    .page-header h1 { font-family: var(--serif); font-size: 2.5rem; font-weight: 600; letter-spacing: -0.02em; }
+    .page-header p { margin-top: 0.75rem; color: var(--muted); font-size: 0.95rem; max-width: 520px; }
+    .divider { width: 48px; height: 2px; background: var(--accent); margin: 1.5rem 0; }
+
+    .social-container { max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem; display: flex; flex-direction: column; gap: 1.5rem; }
+
+    .social-card { background: var(--white); border: 1px solid var(--subtle); border-radius: 4px; padding: 2rem; display: grid; grid-template-columns: 80px 1fr auto; gap: 2rem; align-items: start; transition: box-shadow 0.2s; }
+    .social-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+
+    .platform-icon { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
+    .icon-linkedin { background: #deeaf5; }
+    .icon-platform2 { background: #f0ede8; }
+    .icon-platform3 { background: #f0e8ed; }
+
+    .social-info h2 { font-family: var(--serif); font-size: 1.35rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.25rem; }
+    .handle { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.75rem; font-weight: 400; }
+    .handle a { color: var(--muted); text-decoration: none; }
+    .handle a:hover { color: var(--accent); }
+    .platform-tag { display: inline-block; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; background: var(--bg); border: 1px solid var(--subtle); border-radius: 2px; padding: 0.2rem 0.5rem; color: var(--muted); margin-bottom: 1rem; }
+    .social-info p { color: var(--muted); font-size: 0.9rem; max-width: 560px; }
+
+    .social-cta { display: flex; flex-direction: column; align-items: flex-end; gap: 0.75rem; flex-shrink: 0; }
+    .btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.55rem 1.1rem; border-radius: 3px; font-family: var(--sans); font-size: 0.8rem; font-weight: 500; cursor: pointer; text-decoration: none; transition: all 0.18s; white-space: nowrap; }
+    .btn-primary { background: var(--ink); color: var(--white); border: 1.5px solid var(--ink); }
+    .btn-primary:hover { background: #333; border-color: #333; }
+    .public-badge { font-size: 0.72rem; color: #2d7a45; background: #e8f5ed; border: 1px solid #b2d9be; border-radius: 2px; padding: 0.2rem 0.55rem; font-weight: 500; }
+
+    .brand-note { max-width: 1100px; margin: 0 auto; padding: 0 2rem 2rem; }
+    .brand-note-inner { background: #fdf6f0; border-left: 3px solid var(--accent); border-radius: 0 4px 4px 0; padding: 1rem 1.5rem; }
+    .brand-note-inner p { font-size: 0.875rem; color: var(--muted); }
+    .brand-note-inner strong { color: var(--ink); }
+
+    footer { border-top: 1px solid var(--subtle); text-align: center; padding: 2rem; font-size: 0.8rem; color: var(--muted); }
+
+    @media (max-width: 700px) {
+      .social-card { grid-template-columns: 60px 1fr; }
+      .social-cta { grid-column: 1 / -1; flex-direction: row; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Your Name</a>
+    <ul class="nav-links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="interests.html">Interests</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="social.html" class="active">Social</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header">
+  <p class="page-tag">Online Presence</p>
+  <h1>Social Media</h1>
+  <div class="divider"></div>
+  <p>My public profiles across platforms where I share professional updates, creative work, and personal interests. All profiles are publicly accessible.</p>
+</header>
+
+<div class="social-container">
+
+  <!-- LINKEDIN (required) -->
+  <div class="social-card">
+    <div class="platform-icon icon-linkedin">&#128188;</div>
+    <div class="social-info">
+      <span class="platform-tag">LinkedIn</span>
+      <h2>LinkedIn</h2>
+      <p class="handle"><a href="https://linkedin.com/in/yourhandle" target="_blank" rel="noopener">linkedin.com/in/yourhandle</a></p>
+      <p>
+        Replace this with at least 25 words explaining how this profile supports your personal brand and what visitors will find there — your work history, endorsements, posts about your field, connections with professionals, and so on.
+      </p>
+    </div>
+    <div class="social-cta">
+      <a href="https://linkedin.com/in/yourhandle" class="btn btn-primary" target="_blank" rel="noopener">Visit Profile &#8599;</a>
+      <span class="public-badge">&#10003; Public</span>
+    </div>
+  </div>
+
+  <!-- PLATFORM 2 -->
+  <div class="social-card">
+    <div class="platform-icon icon-platform2">&#128247;</div>
+    <div class="social-info">
+      <span class="platform-tag">Platform Name (e.g. Instagram / GitHub / X)</span>
+      <h2>Platform Two</h2>
+      <p class="handle"><a href="https://platform.com/yourhandle" target="_blank" rel="noopener">platform.com/yourhandle</a></p>
+      <p>
+        Replace this with at least 25 words explaining how this profile supports your personal brand. Describe what type of content you share, how often you post, and what a visitor will walk away knowing about you after browsing your profile.
+      </p>
+    </div>
+    <div class="social-cta">
+      <a href="https://platform.com/yourhandle" class="btn btn-primary" target="_blank" rel="noopener">Visit Profile &#8599;</a>
+      <span class="public-badge">&#10003; Public</span>
+    </div>
+  </div>
+
+  <!-- PLATFORM 3 -->
+  <div class="social-card">
+    <div class="platform-icon icon-platform3">&#127775;</div>
+    <div class="social-info">
+      <span class="platform-tag">Platform Name (e.g. Behance / Medium / YouTube)</span>
+      <h2>Platform Three</h2>
+      <p class="handle"><a href="https://platform.com/yourhandle" target="_blank" rel="noopener">platform.com/yourhandle</a></p>
+      <p>
+        Replace this with at least 25 words explaining how this profile supports your personal brand. Describe what type of content you share, how often you post, and what a visitor will walk away knowing about you after browsing your profile.
+      </p>
+    </div>
+    <div class="social-cta">
+      <a href="https://platform.com/yourhandle" class="btn btn-primary" target="_blank" rel="noopener">Visit Profile &#8599;</a>
+      <span class="public-badge">&#10003; Public</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="brand-note">
+  <div class="brand-note-inner">
+    <p><strong>Reminder:</strong> Before publishing, verify each profile is set to public by opening it in an incognito / private browsing window. Private or restricted profiles will appear broken to visitors and portfolio graders.</p>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 Your Name &mdash; Built for [Course Name]
+</footer>
+
+</body>
+</html>
