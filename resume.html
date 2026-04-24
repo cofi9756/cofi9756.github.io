@@ -44,6 +44,7 @@
 
     .embed-wrapper { width: 100%; border: 1px solid var(--subtle); border-radius: 4px; overflow: hidden; background: var(--white); }
     .embed-wrapper iframe { width: 100%; height: 780px; border: none; display: block; }
+    .embed-wrapper embed { width: 100%; height: 780px; border: none; display: block; }
 
     .embed-placeholder { width: 100%; height: 780px; background: var(--white); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; border: 2px dashed var(--subtle); border-radius: 4px; }
     .embed-placeholder .big-icon { font-size: 3rem; opacity: 0.25; }
@@ -81,16 +82,16 @@
 
 <div class="resume-container">
   <div class="resume-actions">
-    <a href="resume.pdf" class="btn" download>&#11015; Download PDF</a>
+    <a href="Connor Fishburn Resume 2026 (bad version).pdf" class="btn" download>&#11015; Download PDF</a>
     <a href="#" class="btn btn-outline" target="_blank" rel="noopener">Open in Drive &#8599;</a>
   </div>
 
   <!-- OPTION A: Embed a PDF directly -->
-  <!-- Uncomment and set src to your file path:
+  <!-- Uncomment and set src to your file path: -->
   <div class="embed-wrapper">
-    <iframe src="resume.pdf" title="Resume PDF"></iframe>
+    <!-- <iframe src="Connor Fishburn Resume 2026 (bad version).pdf" title="Resume PDF"></iframe> -->
+     <embed src="Connor Fishburn Resume 2026 (bad version).pdf">
   </div>
-  -->
 
   <!-- OPTION B: Embed Google Drive preview -->
   <!-- Uncomment and replace FILE_ID with your Google Drive file ID:
@@ -103,7 +104,7 @@
   </div>
   -->
 
-  <!-- PLACEHOLDER shown until you replace with real embed -->
+  <!-- PLACEHOLDER shown until you replace with real embed
   <div class="embed-placeholder">
     <span class="big-icon">&#128196;</span>
     <h3>Your Resume Goes Here</h3>
@@ -118,6 +119,7 @@
     <strong>Privacy reminder:</strong> Ensure your resume does not include your home address, personal phone number, or other private contact details before publishing publicly.
   </div>
 </div>
+-->
 
 <footer>
   &copy; 2026 Your Connor Fishburn &mdash; Built for CSCI 3112
